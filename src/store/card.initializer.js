@@ -24,5 +24,6 @@ const randomLogos = shuffle([...logos, ...logos]);
 export const cards = Array(20).fill().map((_, i) => ({
     id: i,
     flipped: false,
+    active: true,
     type: randomLogos[i]
 }));

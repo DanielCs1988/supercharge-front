@@ -6,7 +6,7 @@ import './Cards.css';
 
 const Cards = ({ cards, cardClicked }) => {
     const cardComponents = cards.map(card => (
-        <Card key={card.id} {...card} clicked={() => cardClicked(card.id)} />
+        <Card key={card.id} {...card} clicked={() => cardClicked(card.id, card.type)} />
     ));
     return (
         <div className="cards">
@@ -18,7 +18,7 @@ const Cards = ({ cards, cardClicked }) => {
 const mapStateToProps = ({ cards }) => ({ cards });
 
 const mapDispatchToProps = dispatch => ({
-    cardClicked: cardId => dispatch(cardClicked(cardId))
+    cardClicked: (cardId, cardType) => dispatch(cardClicked(cardId, cardType))
 });
 
 export default connect(

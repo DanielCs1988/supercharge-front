@@ -1,8 +1,8 @@
 import React from 'react';
 import './Card.css';
 
-const Card = ({ type, flipped, clicked }) => (
-    <div className="card" onClick={clicked}>
+const Card = ({ type, flipped, active, clicked }) => (
+    <div className={active ? 'card' : 'card inactive'} onClick={active ? clicked : null}>
         {
             flipped ?
                 <img src={type} alt="Card Front" /> :
