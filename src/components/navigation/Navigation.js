@@ -5,6 +5,7 @@ import './Navigation.css';
 const Navigation = () => (
     <div className="navbar">
         <Logo />
+        <span>MEMORY GAME</span>
     </div>
 );
 

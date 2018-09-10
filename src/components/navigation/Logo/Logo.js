@@ -5,7 +5,6 @@ import logo from '../../../assets/supercharge-logo.svg';
 const Logo = () => (
     <div className="logo">
         <img src={logo} alt="Supercharge Logo" />
-        <span>MEMORY GAME</span>
     </div>
 );
 

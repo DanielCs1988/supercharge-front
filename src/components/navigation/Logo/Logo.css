@@ -2,15 +2,9 @@
     padding: 8px;
     height: 100%;
     box-sizing: border-box;
-    line-height: 100%;
 }
 
 .logo img {
     height: 100%;
     color: white;
-}
-
-.logo > span {
-    color: white;
-    font-weight: bold;
 }
