@@ -1,0 +1,16 @@
+.logo {
+    padding: 8px;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.logo img {
+    height: 100%;
+    color: white;
+}
+
+.logo > span {
+    color: white;
+    font-weight: bold;
+    line-height: 50px;
+}
