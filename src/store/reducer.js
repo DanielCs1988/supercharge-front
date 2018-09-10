@@ -1,10 +1,19 @@
+import {CARD_CLICKED} from "./actions";
+import {cards} from "./card.initializer";
+
 const initialState = {
-    cards: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    cards,
     flippedCards: [],
     score: 0
 };
 
 const reducer = (state = initialState, action) => {
+    if (action.type === CARD_CLICKED) {
+        return {
+            ...state,
+            cards: state.cards.map(card => card.id === action.id ? {...card, flipped: !card.flipped} : card)
+        }
+    }
     return state;
 };
 

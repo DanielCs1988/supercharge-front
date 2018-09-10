@@ -1,6 +1,6 @@
 export const CARD_CLICKED = 'CARD_CLICKED';
 
-export const cardClicked = (cardId) => ({
+export const cardClicked = (id) => ({
     type: CARD_CLICKED,
-    cardId
+    id
 });

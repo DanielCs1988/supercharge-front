@@ -6,7 +6,7 @@ import './Cards.css';
 
 const Cards = ({ cards, cardClicked }) => {
     const cardComponents = cards.map(card => (
-        <Card key={card} clicked={() => cardClicked(card)} />
+        <Card key={card.id} {...card} clicked={() => cardClicked(card.id)} />
     ));
     return (
         <div className="cards">

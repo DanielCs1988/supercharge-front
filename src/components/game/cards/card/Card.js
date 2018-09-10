@@ -1,9 +1,13 @@
 import React from 'react';
 import './Card.css';
 
-const Card = ({ type, clicked }) => (
+const Card = ({ type, flipped, clicked }) => (
     <div className="card" onClick={clicked}>
-        <img src={type} alt="Card Front" />
+        {
+            flipped ?
+                <img src={type} alt="Card Front" /> :
+                <div className="card-back" />
+        }
     </div>
 );
 
