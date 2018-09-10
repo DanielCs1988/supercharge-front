@@ -1,0 +1,17 @@
+.button-wrapper {
+    position: absolute;
+    top: -1%;
+    right: 6%;
+}
+.button-wrapper button {
+    padding: 8px;
+    border: 1px solid black;
+    outline: none;
+    background-color: white;
+    font-weight: bold;
+}
+.button-wrapper button:hover {
+    color: white;
+    background-color: cornflowerblue;
+    cursor: pointer;
+}

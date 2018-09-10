@@ -1,4 +1,5 @@
 .game {
     margin: 72px auto;
     width: 800px;
+    position: relative;
 }

@@ -1,5 +1,5 @@
-import {CARD_CLICKED} from "./actions";
-import {cards} from "./card.initializer";
+import {CARD_CLICKED, RESTART_GAME} from "./actions";
+import {cards, shuffle} from "./card.initializer";
 
 const initialState = {
     cards,
@@ -9,10 +9,22 @@ const initialState = {
 };
 
 const reducer = (state = initialState, action) => {
-    if (action.type === CARD_CLICKED) {
-        return flipCard(state, action);
+    switch (action.type) {
+        case CARD_CLICKED:
+            return flipCard(state, action);
+        case RESTART_GAME:
+            return {
+                ...state,
+                cards: shuffle(
+                    state.cards
+                        .map(card => ({ ...card, flipped: false, active: true }))
+                ),
+                score: 0,
+                steps: 0
+            };
+        default:
+            return state;
     }
-    return state;
 };
 
 const flipCard = (state, action) => {
@@ -21,8 +33,7 @@ const flipCard = (state, action) => {
             return {
                 ...state,
                 cards: state.cards.map(card => card.id === action.id ? {...card, flipped: true} : card),
-                flippedCards: [{ id: action.id, type: action.cardType }],
-                steps: state.steps + 1
+                flippedCards: [{ id: action.id, type: action.cardType }]
             };
         case 1:
             return checkIfPair(state, action);
@@ -39,8 +50,7 @@ const flipCard = (state, action) => {
             return {
                 ...state,
                 cards: newCards,
-                flippedCards: [{ id: action.id, type: action.cardType }],
-                steps: state.steps + 1
+                flippedCards: [{ id: action.id, type: action.cardType }]
             };
         default:
             return state;
