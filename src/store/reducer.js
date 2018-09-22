@@ -14,13 +14,11 @@ const reducer = (state = initialState, action) => {
             return flipCard(state, action);
         case RESTART_GAME:
             return {
-                ...state,
+                ...initialState,
                 cards: shuffle(
                     state.cards
                         .map(card => ({ ...card, flipped: false, active: true }))
-                ),
-                score: 0,
-                steps: 0
+                )
             };
         default:
             return state;
